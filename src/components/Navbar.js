@@ -1,6 +1,4 @@
 import React from 'react'
-import { Menu, Icon } from 'antd'
-import {AppstoreOutlined, MailOutlined, SettingOutlined} from '@ant-design/icons';
 import './Navbar.css'
 
 const Navbar = (props) => {
