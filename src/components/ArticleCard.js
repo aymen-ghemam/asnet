@@ -1,7 +1,7 @@
 import React from 'react'
-import './EventCard.css'
+import './ArticleCard.css'
 
-const EventCard = () => {
+const ArticleCard = () => {
   return (
     <div className="event-card">
         <div className="image">
@@ -33,4 +33,4 @@ const EventCard = () => {
   )
 }
 
-export default EventCard
+export default ArticleCard

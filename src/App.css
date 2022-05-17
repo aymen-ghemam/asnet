@@ -13,27 +13,19 @@ body {
   width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+  background-color: #f3f7fc;
 }
 
 .flex {
   display: flex;
 }
-/* 
-.header {
-  justify-content: space-between;
-  background-color: #0e185f;
-}
-.content {
-  height: 100%;
-} */
-
-/* .landing {
-  overflow: hidden;
-} */
 
 a {
   text-decoration: none;
   color: inherit;
+}
+a:hover {
+  color: rgb(0, 124, 124);
 }
 
 h1 {
