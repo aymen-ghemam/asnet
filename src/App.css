@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 /* import react-responsive-carousel css */
 /* @import url("https://cdnjs.cloudflare.com/ajax/libs/react-responsive-carousel/1.0.0/styles/carousel.min.css"); */
+
+:root {
+  --dark-blue: #0e185f;
+  --light-blue: rgb(0, 124, 124);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -25,7 +31,7 @@ a {
   color: inherit;
 }
 a:hover {
-  color: rgb(0, 124, 124);
+  color: var(--light-blue);
 }
 
 h1 {
@@ -35,7 +41,7 @@ h1 {
 .landing {
   min-height: calc(95vh - 70px);
   padding: 2em;
-  background-color: #0e185f;
+  background-color: var(--dark-blue);
 }
 .landing img {
   width: 85%;
