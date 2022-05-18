@@ -21,7 +21,7 @@ const Navbar = (props) => {
               <a href="#">Nos actualité</a>
             </li>
             <li>
-              <a href="">Articles</a>
+              <a href="/articles">Articles</a>
             </li>
             <li>
               <a href="#" aria-expanded="false">
