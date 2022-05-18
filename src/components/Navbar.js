@@ -4,10 +4,10 @@ import './Navbar.css'
 const Navbar = (props) => {
   return (
     <div className="navbar flex">
-    <div className='flex logo-wrapper'>
+    <a href = '/' className='flex logo-wrapper'>
             <img src="./assets/logo_asnet.jpg" alt="logo" className="logo" />
             ASNET
-        </div>
+        </a>
 
         {/* <button id="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
         </button> */}

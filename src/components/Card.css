@@ -3,8 +3,9 @@
   height: 350px;
   color: var(--text-grey);
   background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
   margin-bottom: 2em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .card .top {
   background-color: var(--background-grey);
