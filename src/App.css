@@ -4,7 +4,7 @@
 
 :root {
   --dark-blue: #0e185f;
-  --light-blue: rgb(0, 124, 124);
+  --light-blue: #1fa3f9;
   --text-grey: #606d76;
   --background-grey: #c4c4c4;
 }
@@ -83,4 +83,22 @@ svg {
 .about .cards {
   gap: 2rem;
   justify-content: center;
+}
+
+.articles {
+  background-color: #fff;
+}
+.articles .header {
+  height: 300px;
+  background-image: url("../public/assets/waves.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2em;
+}
+.articles .list {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em;
+  margin-top: 1em;
 }
