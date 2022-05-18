@@ -5,6 +5,8 @@
 :root {
   --dark-blue: #0e185f;
   --light-blue: rgb(0, 124, 124);
+  --text-grey: #606d76;
+  --background-grey: #c4c4c4;
 }
 
 * {
@@ -19,7 +21,8 @@ body {
   width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  background-color: #f3f7fc;
+  background-color: #eff0fc;
+  color: #444;
 }
 
 .flex {
@@ -37,7 +40,12 @@ a:hover {
 h1 {
   font-size: 3rem;
 }
-
+img,
+svg {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
 .landing {
   min-height: calc(95vh - 70px);
   padding: 2em;
@@ -60,4 +68,19 @@ h1 {
 .landing .text h1 {
   width: 70%;
   color: #fff;
+}
+.about {
+  padding: 1em;
+  background-color: #fff;
+}
+.about > .text {
+  text-align: center;
+  width: 50rem;
+  max-width: 100%;
+  font-size: 1.7rem;
+  margin: 1em auto;
+}
+.about .cards {
+  gap: 2rem;
+  justify-content: center;
 }

@@ -1,0 +1,25 @@
+.tag {
+  font-size: 9px;
+  color: var(--dark-blue);
+  padding: 0.8em 2em;
+  background-color: #fff;
+  border-radius: 15px 0 15px 0;
+  position: relative;
+}
+/* .tag .left,
+.tag .right {
+  height: 100%;
+  width: 20px;
+} */
+/* .tag .left {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  background-color: linear-gradient(top right, #000, #fff);
+}
+.tag .right {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  background-color: red;
+} */
