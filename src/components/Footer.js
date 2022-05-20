@@ -4,7 +4,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer className='footer flex row'>
+    <footer className='footer flex'>
         <div className='socials'>
         <a className='facebook' href='#'>  
           <AiFillFacebook size={'2rem'}  />

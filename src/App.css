@@ -7,6 +7,12 @@
   --light-blue: #1fa3f9;
   --text-grey: #606d76;
   --background-grey: #c4c4c4;
+  --white: #e6f5fe;
+  --blue-gradient: linear-gradient(
+    90deg,
+    rgba(48, 71, 241, 1) 0%,
+    rgba(56, 80, 255, 1) 100%
+  );
 }
 
 * {
@@ -23,6 +29,7 @@ body {
   font-size: 14px;
   background-color: #eff0fc;
   color: #444;
+  overflow-x: hidden;
 }
 
 .flex {
@@ -47,14 +54,21 @@ svg {
   max-height: 100%;
 }
 .landing {
-  min-height: calc(95vh - 70px);
+  min-height: calc(90vh - 70px);
   padding: 2em;
-  background-color: var(--dark-blue);
+  /* background-color: var(--dark-blue); */
+  background: linear-gradient(
+    90deg,
+    rgba(48, 71, 241, 1) 0%,
+    rgba(56, 80, 255, 1) 100%
+  );
 }
-.landing img {
-  width: 85%;
+.landing .svg {
+  /* width: 50%; */
   height: 100%;
-  padding-bottom: 2em;
+  /* padding-bottom: 2em; */
+  justify-content: center;
+  align-items: center;
 }
 
 .landing .text {
@@ -64,10 +78,14 @@ svg {
   text-align: center;
   color: #fff;
   padding-bottom: 2em;
+  /* width: 50%; */
 }
 .landing .text h1 {
   width: 70%;
   color: #fff;
+}
+.landing .button {
+  margin-top: 1em;
 }
 .about {
   padding: 1em;
@@ -79,10 +97,12 @@ svg {
   max-width: 100%;
   font-size: 1.7rem;
   margin: 1em auto;
+  padding: 1em;
 }
 .about .cards {
   gap: 2rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .articles {
@@ -101,4 +121,25 @@ svg {
   gap: 2em;
   padding: 1em;
   margin-top: 1em;
+}
+
+.latest {
+  text-align: center;
+  background-color: rgba(48, 71, 241, 1);
+  color: #fff;
+  padding: 2em 0;
+}
+.latest .title {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 40em) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .row > div {
+    width: 100%;
+  }
 }

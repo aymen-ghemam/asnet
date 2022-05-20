@@ -1,0 +1,58 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.carousel {
+  position: absolute;
+  inset: 0 0;
+
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  /* position: relative; */
+  opacity: 1;
+}
+.carousel > div {
+  width: 40%;
+  height: 100%;
+}
+.carousel h3 {
+  font-size: 1.7rem;
+}
+.carousel .desc {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1em;
+}
+.carousel .img {
+  height: 90%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-container .control {
+  position: absolute;
+  font-size: 3rem;
+  top: 40%;
+  width: fit-content;
+  cursor: pointer;
+}
+.carousel-container .control.left {
+  left: 0.5em;
+}
+.carousel-container .control.right {
+  right: 0.5em;
+}
+.fade-in {
+  opacity: 1;
+  transition: opacity 3s ease;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}

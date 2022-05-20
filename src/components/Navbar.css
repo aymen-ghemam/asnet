@@ -5,8 +5,13 @@
   align-content: center;
   padding: 0.2em 4%;
   position: relative;
-  background-color: #fff;
-  /* background: linear-gradient(0deg, #0a37ff 0%, #0024c2 87.5%); */
+  color: var(--white);
+  /* background-color: #3850ff; */
+  background: linear-gradient(
+    90deg,
+    rgba(48, 71, 241, 1) 0%,
+    rgba(56, 80, 255, 1) 100%
+  );
 }
 .navbar .navigation {
   list-style: none;
@@ -28,5 +33,5 @@
   margin-right: 2em;
   font-size: 1.4rem;
   font-weight: bold;
-  color: var(--dark-blue);
+  /* color: var(--dark); */
 }
