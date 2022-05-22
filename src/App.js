@@ -9,6 +9,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Article from './pages/Article';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             </Route>
             <Route exact path="/articles" element={<ArticlePage />}>
             </Route>
-            
+            <Route exact path='/articles/1' element={<Article/>} />
           </Routes>
         </BrowserRouter>
         <Footer />

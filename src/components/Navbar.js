@@ -5,7 +5,7 @@ const Navbar = (props) => {
   return (
     <div className="navbar flex">
     <a href = '/' className='flex logo-wrapper'>
-            <img src="./assets/logo_asnet.jpg" alt="logo" className="logo" />
+            <img src="/assets/logo_asnet.jpg" alt="logo" className="logo" />
             ASNET
         </a>
 
