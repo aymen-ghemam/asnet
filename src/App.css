@@ -407,5 +407,12 @@ svg {
   .carouselHeader{
     height: 10%;
   }
+  .articleHeaderDesc{
+    font-size: 1.5em;
+  }
+  .articleHeaderImage >img{
+    height: 100%;
+    width: 100%;
+  }
 }
 

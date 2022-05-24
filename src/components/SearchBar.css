@@ -89,3 +89,18 @@
   outline: 0;
   color: var(--light-blue);
 } */
+
+@media (max-width: 40em){
+  .search-bar {
+    max-width: 80%;
+    margin: 5vh auto;
+  }
+  .searchInput{
+    width: 75%;
+    font-size: 1.4em;
+  }
+  .searchBtn{
+    width: 25%;
+    font-size: 1.2em;
+  }
+}

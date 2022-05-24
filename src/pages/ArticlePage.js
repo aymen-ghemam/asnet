@@ -5,15 +5,6 @@ import SearchBar from "../components/SearchBar";
 const ArticlePage = () => {
   return (
     <section className="articles">
-      {/* <div className="header flex">
-        <h1>This is a title</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          tempus mi mi, eu porttitor justo suscipit pretium. Integer non
-          facilisis
-        </p>
-        <img src="/assets/waves.svg" alt="" />
-      </div> */}
       <section className="headerContainer articleHeader">
         <div className="headerDesc articleHeaderDesc">
           <h1>This is a title</h1>
