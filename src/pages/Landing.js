@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../components/Button";
 import Carousel from "../components/Carousel";
-import SimpleCard from "../components/SimpleCard";
 
 const Landing = () => {
   const list = [

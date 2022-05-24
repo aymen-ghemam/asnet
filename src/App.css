@@ -204,9 +204,21 @@ svg {
   background-repeat: no-repeat;
   padding: 1rem;
 }
+
+
+.articleHeader{
+  background-image: url("../public/assets/wavesBG.svg");
+  background-size: contain;
+  min-height: calc(70vh - 70px);
+}
+
 .headerImage >img{
   height: 60%;
   width: 60%;
+}
+.articleHeaderImage >img{
+  height: 80%;
+  width: 80%;
 }
 
 .headerImage {
@@ -223,6 +235,11 @@ svg {
   flex-direction: column;
   padding: 7% 5%;
   width: 50%;
+}
+.articleHeaderDesc{
+  padding: 4% 5%;
+  width: 50%;
+  text-align: center;
 }
 .headerDesc h1{
   font-size: 2em;
@@ -313,6 +330,7 @@ svg {
   height: 50%;
   padding: 1.3em;
 }
+
 
 @media (max-width: 40em) {
   .row {
