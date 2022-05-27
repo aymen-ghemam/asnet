@@ -7,14 +7,15 @@
   align-items: center;
   gap: 1em;
 }
-.EventContainer{
+.EventContainer {
   width: 90%;
   height: 100%;
-  display: flex ;
+  display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-.controler{
+.controler {
   width: 10%;
   font-size: 3rem;
   width: fit-content;
@@ -23,6 +24,8 @@
 }
 .carousel {
   display: flex;
+  position: absolute;
+  left: 0;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -31,68 +34,74 @@
 .fade-in {
   display: flex;
   animation: fade_in_show 0.5s;
-
 }
 .fade-out {
-    display: none;
+  display: none;
 }
 
-.carouselImage{
+.carouselImage {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 60%;
   height: 100%;
 }
-.carouselImage .img img{
-  width: 100%;
-  height: 100%;
+.carouselImage .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
-.carouselDesc{
+.carouselImage .img img {
+  width: 90%;
+}
+
+.carouselDesc {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   height: 100%;
-  width: 30%;
+  width: 50%;
   gap: 1em;
 }
-.carouselDesc h3{
+.carouselDesc h3 {
   display: flex;
   align-items: center;
   height: 30%;
   font-size: 3em;
   color: white;
 }
-.carouselDesc p{
+.carouselDesc p {
   height: 30%;
   font-size: 1.2em;
   color: #e6e6e6;
 }
-.carouselDesc div{
+.carouselDesc div {
   height: 20%;
 }
 
 @keyframes fade_in_show {
   0% {
-       opacity: 0;
-       transform: scale(0.8)
+    opacity: 0;
+    transform: scale(0.9);
   }
   100% {
-       opacity: 1;
-       transform: scale(1)
+    opacity: 1;
+    transform: scale(1);
   }
-
 }
 
 @media (max-width: 40em) {
   .carousel {
     flex-direction: column;
   }
-  .carouselImage{
+  .carouselImage {
     width: 100%;
   }
-  .carouselDesc{
+  .carouselDesc {
     height: 100%;
     width: 100%;
     gap: 0.3em;
