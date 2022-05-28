@@ -444,6 +444,9 @@ svg {
   font-size: 1.3vw;
   font-weight: 700;
 }
+.salonContainer {
+  height: 100vh;
+}
 
 @media (max-width: 40em) {
   .row {

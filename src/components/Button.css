@@ -1,14 +1,16 @@
 .button {
   display: block;
   width: max-content;
-  background-color: #dc3545;
   margin: 0 auto;
-  padding: 0.7em 1em;
+  padding: 0.5em 1em;
   font-size: 1.2rem;
-  /* margin-top: 1em; */
-  color: white;
+  border-radius: 3px;
+  background-color: white;
+  color: #980b6e;
+  font-weight: 600;
 }
 .button:hover {
-  background-color: #fff;
-  color: #dc3545;
+  box-shadow: 3px 3px 10px hsl(318, 87%, 12%);
+  color: #980b6e;
+  transition: 0.3s;
 }

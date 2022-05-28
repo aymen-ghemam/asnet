@@ -46,10 +46,14 @@
   border: 0;
   font-weight: bold;
   font-size: 12px;
-  padding: 8px;
+  padding: 6px;
   border-radius: 5px;
   cursor: pointer;
   /* font-size: 1.2rem; */
+}
+.signInBtn:hover {
+  box-shadow: 0 3px 10px hsl(318, 87%, 12%);
+  transition: 0.3s;
 }
 
 #primary-navigation a:hover {

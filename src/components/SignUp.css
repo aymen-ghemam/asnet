@@ -29,7 +29,7 @@
 .signUpPopUp {
   display: flex;
   flex-direction: row;
-  height: 80%;
+  height: 90%;
   width: 70%;
   z-index: 2;
   border-radius: 10px;
@@ -51,7 +51,7 @@
 }
 .signUpInput {
   margin: 0.5rem 0 0.5rem 0;
-  height: 3rem;
+  height: 2.3rem;
   width: 100%;
   padding: 1rem;
   border-radius: 0.3rem;
@@ -62,9 +62,9 @@
 
 .signUpInput:focus {
   border: 0;
-  outline: 3px solid hsla(204, 100%, 30%, 0.516);
-  background-color: #f7fcff;
-  transition: 0.2s;
+  outline: 4px solid #980b6e5e;
+  background-color: hsl(318, 100%, 98%);
+  transition: 0.1s;
 }
 
 .signUpInputContainer {
@@ -77,24 +77,6 @@
   font-weight: bold;
   color: hsl(233, 24%, 31%);
 }
-
-.connectBtn {
-  cursor: pointer;
-  font-weight: bold;
-  padding: 10px;
-  border: 0;
-  width: 30%;
-  border-radius: 6px;
-  color: white;
-  background-color: #3348e1;
-}
-
-.connectBtnContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .signUpInfoTitle h3 {
   margin: 10px 0 20px 0;
   font-size: 16px;
@@ -105,92 +87,6 @@
   justify-content: space-between;
   width: 60%;
   margin-bottom: 1.5rem;
-}
-/* .rememberMe{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.rememberMe input{
-    margin-right: 3px;
-    color: hsl(233, 24%, 31%);
-}
-
-.rememberMe label{
-    color: hsl(233, 24%, 31%);
-} */
-
-.switchSignBtn {
-  text-decoration: underline;
-  color: hsl(233, 4%, 60%);
-  font-size: 10px;
-  border: 0;
-  background-color: unset;
-  cursor: pointer;
-}
-.rememberMeContainer {
-  display: block;
-  position: relative;
-  padding-left: 14px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 10px;
-}
-.rememberMeContainer input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 11px;
-  width: 11px;
-  border-radius: 3px;
-  background-color: #ccc;
-}
-
-/* On mouse-over, add a grey background color */
-.rememberMeContainer:hover input ~ .checkmark {
-  background-color: #bbb;
-}
-
-/* When the checkbox is checked, add a blue background */
-.rememberMeContainer input:checked ~ .checkmark {
-  background-color: hsl(233, 74%, 51%);
-  transition: 0.3s;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.rememberMeContainer input:checked ~ .checkmark:after {
-  display: block;
-  transition: 0.3s;
-}
-
-/* Style the checkmark/indicator */
-.rememberMeContainer .checkmark:after {
-  left: calc(50% - 1.5px);
-  top: calc(50% - 4px);
-  width: 2px;
-  height: 5px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
 }
 
 .nomPrenomContainer {
@@ -208,4 +104,22 @@
 
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+.submitSignUpContainer {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sexeInput {
+  display: block;
+  /* width: 100%;
+  height: 5%; */
+}
+
+#sexeInput option:active {
+  background-color: red;
 }

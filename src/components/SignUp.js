@@ -24,7 +24,7 @@ const SignUp = (props) => {
               type="text"
               name="email"
               id="emailInput"
-              className="signInInput"
+              className="signUpInput"
             />
           </div>
           <div className="signUpInputContainer nomPrenomContainer">
@@ -65,38 +65,54 @@ const SignUp = (props) => {
               className="signUpInput"
             />
           </div>
-          <div className="additionalInfoContainer">
-            {/* <div className="rememberMe"> */}
-            <label className="rememberMeContainer">
-              Mémoriser info
-              <input type="checkbox" name="remember" value={true} />
-              <span className="checkmark"></span>
-            </label>
-            {/* </div> */}
-            {/* <div className="forgotPsw"> */}
-            <a className="switchSignBtn" href="#">
-              Mot de passe oublié?
-            </a>
-            {/* </div> */}
+          <div className="signUpInputContainer nomPrenomContainer">
+            <div className="prenomInputContainer">
+              <label htmlFor="sexeInput">sexe :</label>
+
+              <select id="sexeInput">
+                <option value="homme">Homme</option>
+                <option value="femme">femme</option>
+              </select>
+            </div>
+            <div className="prenomInputContainer">
+              <label htmlFor="dateNaissanceInput">date de naissance :</label>
+              <input
+                type="date"
+                name="dateNaissance"
+                id="dateNaissanceInput"
+                className="signUpInput"
+              />
+            </div>
           </div>
-          <div className="connectBtnContainer">
+          <div className="signUpInputContainer">
+            <label htmlFor="photoInput">
+              Photo :<span className="photoInputContain"></span>
+            </label>
+            <input
+              type="file"
+              name="photo"
+              id="photoInput"
+              className="hidden"
+            />
+          </div>
+          <div className="submitSignUpContainer">
             <button
               className="connectBtn"
               onClick={() => props.setSignUpHidden((prev) => !prev)}
             >
               Connecter
             </button>
-          </div>
-          <div>
-            <button
-              className="switchSignBtn"
-              onClick={() => {
-                props.setSignInHidden((prev) => !prev);
-                props.setSignUpHidden((prev) => !prev);
-              }}
-            >
-              vous n'avez pas de compte ? S'inscrire
-            </button>
+            <div>
+              <button
+                className="switchSignBtn"
+                onClick={() => {
+                  props.setSignInHidden((prev) => !prev);
+                  props.setSignUpHidden((prev) => !prev);
+                }}
+              >
+                vous n'avez pas de compte ? S'inscrire
+              </button>
+            </div>
           </div>
         </div>
       </div>

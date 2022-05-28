@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import "./Navbar.css";
 
 const Navbar = (props) => {
@@ -35,6 +34,9 @@ const Navbar = (props) => {
           </li>
           <li>
             <a href="">Faire un don</a>
+          </li>
+          <li>
+            <a href="">Salon chat</a>
           </li>
           <li className="signInBtnContainer">
             <button

@@ -55,16 +55,16 @@
   width: 100%;
   padding: 1rem;
   border-radius: 0.3rem;
-  border: 1px solid black;
+  border: 1px solid hsl(318, 87%, 12%);
   background-color: #fff;
-  color: #011b2c;
+  color: hsl(318, 87%, 5%);
 }
 
 .signInInput:focus {
   border: 0;
-  outline: 3px solid hsla(204, 100%, 30%, 0.516);
-  background-color: #f7fcff;
-  transition: 0.2s;
+  outline: 4px solid #980b6e5e;
+  background-color: hsl(318, 100%, 98%);
+  transition: 0.1s;
 }
 
 .inputContainer {
@@ -75,7 +75,7 @@
 .inputContainer label {
   font-size: 0.8em;
   font-weight: bold;
-  color: hsl(233, 24%, 31%);
+  color: hsl(318, 24%, 31%);
 }
 
 .connectBtn {
@@ -86,7 +86,12 @@
   width: 30%;
   border-radius: 6px;
   color: white;
-  background-color: #3348e1;
+  background-color: #980b6e;
+  text-align: center;
+}
+.connectBtn:hover {
+  box-shadow: 0 0 5px hsl(318, 87%, 12%);
+  transition: 0.2s;
 }
 
 .connectBtnContainer {
@@ -98,7 +103,7 @@
 .signInInfoTitle h3 {
   margin: 10px 0 20px 0;
   font-size: 16px;
-  color: #0e185f;
+  color: hsl(318, 74%, 21%);
 }
 .additionalInfoContainer {
   display: flex;
@@ -106,19 +111,6 @@
   width: 60%;
   margin-bottom: 1.5rem;
 }
-/* .rememberMe{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.rememberMe input{
-    margin-right: 3px;
-    color: hsl(233, 24%, 31%);
-}
-
-.rememberMe label{
-    color: hsl(233, 24%, 31%);
-} */
 
 .switchSignBtn {
   text-decoration: underline;
@@ -128,11 +120,14 @@
   background-color: unset;
   cursor: pointer;
 }
+.switchSignBtn:hover {
+  color: #980b6e;
+}
 
 .rememberMeContainer {
   display: block;
   position: relative;
-  padding-left: 14px;
+  padding-left: 15px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -151,12 +146,19 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 11px;
-  width: 11px;
+  height: 12px;
+  width: 13px;
   border-radius: 3px;
   background-color: #ccc;
 }
 
+.submitSignBtn {
+  display: none;
+}
+
+.rememberMeContainer {
+  color: hsl(318, 87%, 12%);
+}
 /* On mouse-over, add a grey background color */
 .rememberMeContainer:hover input ~ .checkmark {
   background-color: #bbb;
@@ -164,7 +166,7 @@
 
 /* When the checkbox is checked, add a blue background */
 .rememberMeContainer input:checked ~ .checkmark {
-  background-color: hsl(233, 74%, 51%);
+  background-color: hsl(318, 74%, 51%);
   transition: 0.3s;
 }
 

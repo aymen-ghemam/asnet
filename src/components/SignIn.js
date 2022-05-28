@@ -2,6 +2,10 @@ import React from "react";
 import "./SignIn.css";
 
 const SignIn = (props) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(e.target[0].value); // get the email value
+  };
   return (
     <div
       className={
@@ -14,7 +18,7 @@ const SignIn = (props) => {
       ></div>
       <div className="signInPopUp">
         <div className="signInImageContainer"></div>
-        <div className="signInInfoContainer">
+        <form className="signInInfoContainer" onSubmit={handleSubmit}>
           <div className="signInInfoTitle">
             <h3>Connexion</h3>
           </div>
@@ -51,12 +55,12 @@ const SignIn = (props) => {
             {/* </div> */}
           </div>
           <div className="connectBtnContainer">
-            <button
+            <input
+              type="submit"
+              value="Connecter"
               className="connectBtn"
               onClick={() => props.setSignInHidden((prev) => !prev)}
-            >
-              Connecter
-            </button>
+            />
           </div>
           <div>
             <button
@@ -69,7 +73,7 @@ const SignIn = (props) => {
               vous n'avez pas de compte ? S'inscrire
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
