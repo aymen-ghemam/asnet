@@ -160,7 +160,7 @@ svg {
   margin: 0 auto;
   max-height: 300px;
   aspect-ratio: 16/9;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 .article .desc {
   margin: 0 auto;
@@ -168,7 +168,7 @@ svg {
   width: 60%;
 }
 .article-section {
-  margin: 1em auto;
+  margin: 0.5em auto;
 }
 .article-section .img {
   /* height: 300px; */
@@ -176,7 +176,7 @@ svg {
   aspect-ratio: 16 / 9;
 }
 .article-section .section-body {
-  padding: 1em;
+  padding: 0 1em;
   gap: 2rem;
 }
 .article-section .section-body p {
