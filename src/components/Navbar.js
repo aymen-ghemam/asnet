@@ -37,12 +37,13 @@ const Navbar = (props) => {
             <a href="">Faire un don</a>
           </li>
           <li className="signInBtnContainer">
+            {props.isLoggedIn === true ? '': 
             <button
               className="signInBtn"
               onClick={() => props.setSignInHidden((prev) => !prev)}
             >
               Se connecter
-            </button>
+            </button>}
           </li>
         </ul>
       </nav>
