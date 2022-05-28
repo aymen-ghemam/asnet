@@ -6,12 +6,12 @@
   padding: 0.2em 4%;
   position: relative;
   color: var(--white);
-  /* background-color: #3850ff; */
-  background: linear-gradient(
+  background-color: #980b6e;
+  /* background: linear-gradient(
     90deg,
     rgba(48, 71, 241, 1) 0%,
     rgba(56, 80, 255, 1) 100%
-  );
+  ); */
 }
 .navbar .navigation {
   list-style: none;
@@ -34,4 +34,26 @@
   font-size: 1.4rem;
   font-weight: bold;
   /* color: var(--dark); */
+}
+
+.signInBtnContainer {
+  margin-left: 3vw;
+}
+
+.signInBtn {
+  color: #ad147f;
+  background-color: #ffffff;
+  border: 0;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* font-size: 1.2rem; */
+}
+
+#primary-navigation a:hover {
+  color: hsl(318, 80%, 90%);
+  border-bottom: 2px solid #f9c8ea;
+  transition: 0.1s;
 }

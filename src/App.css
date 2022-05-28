@@ -15,6 +15,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 html,
@@ -23,7 +26,7 @@ body {
   width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  background-color: #eff0fc;
+  background-color: #fef6fc;
   color: #444;
   overflow-x: hidden;
 }
@@ -40,27 +43,31 @@ a:hover {
   color: var(--light-blue);
 }
 
-h1 {
+/* h1 {
   font-size: 3rem;
-}
-img,
+} */
+/* img,
 svg {
   width: 100%;
   max-width: 100%;
   max-height: 100%;
-}
+} */
 .landing {
-  min-height: calc(90vh - 70px);
-  padding: 2em;
+  min-height: calc(100vh - 70px);
+  padding: 3em;
   /* background-color: var(--dark-blue); */
-  background: linear-gradient(
+  background-image: url("../public/assets/landingBG1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* background: linear-gradient(
     90deg,
     rgba(48, 71, 241, 1) 0%,
     rgba(56, 80, 255, 1) 100%
-  );
+  ); */
+  justify-content: space-between;
 }
 .landing .svg {
-  /* width: 50%; */
+  width: 200px;
   height: 100%;
   /* padding-bottom: 2em; */
   justify-content: center;
@@ -69,21 +76,22 @@ svg {
 
 .landing .text {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  /* align-items: center;  */
+  /* justify-content: center; */
+  width: max-content;
   color: #fff;
-  padding-bottom: 2em;
-  /* width: 50%; */
+  padding: 3em 2em;
+  width: 700px;
 }
-.landing .text h1 {
+.landing .text h1,
+.landing .text p {
   width: 70%;
   color: #fff;
 }
 .landing .button {
   margin-top: 1em;
 }
-.about {
+/* .about {
   padding: 1em;
   background-color: #fff;
 }
@@ -99,7 +107,7 @@ svg {
   gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
-}
+} */
 
 .articles {
   background-color: #fff;
@@ -131,13 +139,20 @@ svg {
 }
 
 .latest {
-  text-align: center;
-  background-color: rgba(48, 71, 241, 1);
-  color: #fff;
-  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #980b6e;
 }
-.latest .title {
-  margin-bottom: 2rem;
+
+.carouselContainer {
+  height: 80%;
+}
+.carouselHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
 }
 
 .article-container {
@@ -153,8 +168,8 @@ svg {
   background-color: #f5fbff;
 }
 .title {
-  color: var(--blue);
-  margin-bottom: 1em;
+  font-size: 28px;
+  color: #fef6fc;
 }
 .article .main-img {
   margin: 0 auto;
@@ -182,6 +197,254 @@ svg {
 .article-section .section-body p {
   width: fit-content;
 }
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: calc(100vh - 70px);
+  background-image: url("../public/assets/landingBG1.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+}
+
+.articleHeader {
+  background-image: url("../public/assets/wavesBG.svg");
+  background-size: contain;
+  min-height: calc(70vh - 70px);
+}
+
+.headerImage > img {
+  height: 80%;
+  width: 70%;
+}
+.articleHeaderImage > img {
+  height: 80%;
+  width: 80%;
+}
+
+.headerImage {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../public/assets/waves1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.headerDesc {
+  font-size: 1.3em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 5% 5%;
+  width: 50%;
+  text-align: center;
+}
+.articleHeaderDesc {
+  padding: 4% 5%;
+  width: 50%;
+  text-align: center;
+}
+.headerDesc h1 {
+  font-size: 2em;
+}
+.headerDesc p {
+  font-size: 0.7em;
+}
+
+.OrangeText {
+  color: #fb983c;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutMain {
+  margin-bottom: 50vh;
+  position: relative;
+}
+
+.aboutText {
+  background-image: url("/public/assets/aboutBG.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.aboutText > p {
+  width: 30%;
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+}
+.aboutCardContainer {
+  background-image: url("/public/assets/Formation.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  width: 30vw;
+  height: 50vh;
+}
+.card2 {
+  background-image: url("/public/assets/Enfant.png");
+  left: calc(50% - 190px);
+  bottom: -300px;
+}
+.card3 {
+  background-image: url("/public/assets/Accompagner.png");
+  left: unset;
+  right: 0;
+}
+
+.aboutCardDesc {
+  background-image: url("/public/assets/container1.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 50%;
+  padding: 1.2em;
+  color: white;
+  font-size: 1em;
+  text-align: center;
+}
+
+.aboutCardDesc2 {
+  background-image: url("/public/assets/container2.svg");
+}
+.aboutCardDesc3 {
+  background-image: url("/public/assets/container3.svg");
+  width: 55%;
+  height: 50%;
+  padding: 1.3em;
+}
+
+.ourContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  height: 80vh;
+  padding: 5%;
+}
+
+.ourContentContainer {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 25%;
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(318, 87%, 48%),
+    hsl(318, 87%, 22%)
+  );
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 10px hsla(318, 87%, 12%, 0.274);
+}
+
+.ourContentHeader {
+  height: 20%;
+  text-align: center;
+  font-weight: 500;
+  padding: 8px 10px;
+  font-size: 2vw;
+}
+.ourContentText {
+  height: 60%;
+  padding: 20px 15px;
+  font-size: 1.25vw;
+}
+.ourContentLink {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #980b6e;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.ourContentLink:hover {
+  background-color: #730a54;
+  color: #fff;
+  transition: 0.3s;
+}
+.ourContentLink a:hover {
+  background-color: inherit;
+  color: inherit;
+}
+.stateContainer {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vh;
+}
+.stateTitle {
+  font-size: 2vw;
+  color: #4d0036;
+  font-weight: 600;
+  height: 30%;
+}
+.stateContainer {
+  background-image: radial-gradient(hsl(318, 77%, 58%), hsl(318, 33%, 62%));
+}
+.stateContentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  gap: 5vw;
+  color: #4d0036;
+}
+.stateContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 100%;
+}
+.stateDesc {
+  text-align: center;
+  height: 40%;
+  font-size: 1.3vw;
+  font-weight: 400;
+}
+.stateSvg {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stateNum {
+  height: 10%;
+  font-size: 1.3vw;
+  font-weight: 700;
+}
+
 @media (max-width: 40em) {
   .row {
     flex-direction: column;
@@ -200,5 +463,68 @@ svg {
   .article {
     width: 100%;
     padding: 1em;
+  }
+  .landing {
+    min-height: calc(90vh - 70px);
+    padding: 5em;
+    /* background-color: var(--dark-blue); */
+    /* background-image: url("../public/assets/landingBG1.svg");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background: linear-gradient(
+      90deg,
+      rgba(48, 71, 241, 1) 0%,
+      rgba(56, 80, 255, 1) 100%
+    );
+  }
+  .headerContainer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: calc(90vh - 70px);
+    padding: 1rem;
+    background: linear-gradient(
+      90deg,
+      rgba(48, 71, 241, 1) 0%,
+      rgba(56, 80, 255, 1) 100%
+    );
+  }
+  .headerImage > img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .headerImage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headerDesc {
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+  }
+  .about {
+    margin: 5vh 1vw;
+  }
+  .aboutCardContainer {
+    position: unset;
+    width: 90vw;
+    height: 40vh;
+    margin: 3vh 0;
+  }
+  .aboutMain {
+    margin-bottom: 0;
+  }
+  .carouselHeader {
+    height: 10%;
+  }
+  .articleHeaderDesc {
+    font-size: 1.5em;
+  }
+  .articleHeaderImage > img {
+    height: 100%;
+    width: 100%;
   }
 }
