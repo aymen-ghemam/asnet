@@ -4,7 +4,6 @@ import "./SignIn.css";
 const SignIn = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(e.target[0].value); // get the email value
   };
   return (
     <div

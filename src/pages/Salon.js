@@ -1,12 +1,15 @@
 import React from "react";
 import ArticleSection from "../components/ArticleSection";
+import Chats from "../components/Chats";
 
 import { useState } from "react";
 
 const Salon = () => {
-  const [showList, setshowList] = useState(true);
-
-  return <div className="salonContainer">{/* {showList? */}</div>;
+  return (
+    <div className="salonContainer">
+      <Chats />
+    </div>
+  );
 };
 
 export default Salon;
