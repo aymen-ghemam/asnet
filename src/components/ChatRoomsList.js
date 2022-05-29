@@ -4,57 +4,12 @@ import Room from "./Room";
 import { useState } from "react";
 import ChatWindow from "./ChatWindow";
 
-function ChatRoomsList({ props }) {
+function ChatRoomsList(props) {
   const [insideRoom, setinsideRoom] = useState(false);
   const [chatName, setchatName] = useState("Salon chat");
-  const chatList = [
-    {
-      name: "Hamaidi Youcef Islam",
-      lastMessage: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut neque
-        quia quos officiis similique doloremque aliquid aliquam fuga maiores
-        minima. Error sapiente tenetur praesentium amet impedit nostrum ex
-        laborum repellat.`,
-      image: null,
-    },
-    {
-      name: "Ghamem Hammed Aymen",
-      lastMessage: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut neque
-        quia quos officiis similique doloremque aliquid aliquam fuga maiores
-        minima. Error sapiente tenetur praesentium amet impedit nostrum ex
-        laborum repellat.`,
-      image: null,
-    },
-    {
-      name: "Hamaidi Youcef Islam",
-      lastMessage: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut neque
-        quia quos officiis similique doloremque aliquid aliquam fuga maiores
-        minima. Error sapiente tenetur praesentium amet impedit nostrum ex
-        laborum repellat.`,
-      image: null,
-    },
-    {
-      name: "Ghamem Hammed Aymen",
-      lastMessage: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut neque
-        quia quos officiis similique doloremque aliquid aliquam fuga maiores
-        minima. Error sapiente tenetur praesentium amet impedit nostrum ex
-        laborum repellat.`,
-      image: null,
-    },
-    {
-      name: "Hamaidi Youcef Islam",
-      lastMessage: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut neque
-        quia quos officiis similique doloremque aliquid aliquam fuga maiores
-        minima. Error sapiente tenetur praesentium amet impedit nostrum ex
-        laborum repellat.`,
-      image: null,
-    },
-  ];
 
   return (
     <div className="chatRoomsContainer">
-      <div className="chatRoomsTitle">
-        <h3>Salon chat</h3>
-      </div>
       <div className="noRoomContainer">
         <div className="searchBarContainer">
           <div className="searchChatContainer">
@@ -62,20 +17,18 @@ function ChatRoomsList({ props }) {
               type="text"
               placeholder="Search"
               className="searchRoomInput"
+              onChange={(e) => {
+                props.setsearchInput(e.target.value);
+              }}
             />
-          </div>
-          <div className="sendNewMessageContainer">
-            <button className="newMessageBtn">New</button>
           </div>
         </div>
         <div className="roomsListContainer">
-          {chatList.map((element) => (
+          {props.chatList.map((element) => (
             <Room
+              current={props.currentRoom.id == element.id ? true : false}
               info={element}
-              onClick={() => {
-                setinsideRoom((prev) => !prev);
-                setchatName(element.name);
-              }}
+              onClick={() => props.setcurrentRoom(element)}
             />
           ))}
         </div>

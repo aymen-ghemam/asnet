@@ -1,21 +1,9 @@
 .chatRoomsContainer {
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
-  border-bottom-right-radius: 0;
-  box-shadow: 0 0 3px black;
-  height: 80%;
-  width: 80%;
-}
-.chatRoomsTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 15%;
-  width: 100%;
-  border-radius: 20px 20px 0 0;
-  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  height: 100%;
+  width: 30%;
 }
 .chatRoomsTitle h3 {
   font-size: 1.5em;
@@ -36,7 +24,7 @@
 
 .searchBarContainer {
   display: flex;
-  height: 20%;
+  height: 15%;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.304);
 }
@@ -44,7 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 85%;
+  width: 100%;
 }
 .searchRoomInput {
   width: 95%;
@@ -70,15 +58,14 @@
 
 .roomsListContainer {
   display: flex;
-  /* justify-content: start; */
   align-items: center;
   flex-direction: column;
-  height: 80%;
+  /* gap: 2vh; */
+  height: 85%;
   width: 100%;
-  /* padding: 20px; */
   overflow-y: auto;
   border-radius: 0 0 20px 20px;
-  /* background-color: aqua; */
+  padding: 1px;
 }
 
 .roomsListContainer::-webkit-scrollbar {
@@ -93,19 +80,29 @@
 
 .roomContainer {
   display: flex;
-  min-height: 16vh;
+  min-height: 17%;
   width: 100%;
-  border-bottom: 1px solid black;
-  padding-right: 10px;
+  overflow: hidden;
+  border-radius: 10px;
 }
 .roomContainer:hover {
-  background-color: hsl(0, 0%, 89%);
+  background-color: hsl(318, 70%, 95%);
   cursor: default;
 }
 .roomImage {
   width: 15%;
   height: 100%;
   border-radius: 10px 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(101, 43, 226); */
+}
+.roomImage img {
+  width: 80%;
+  height: 70%;
+  border-radius: 50%;
+  object-fit: cover;
   /* background-color: rgb(101, 43, 226); */
 }
 .roomTitle {
@@ -113,11 +110,24 @@
   font-weight: 500;
 }
 .roomContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 85%;
   padding: 10px;
-  border-left: 1px solid black;
+}
+.roomMessage {
+  color: #727272;
+}
+.noRoomContainer {
+  height: 100%;
 }
 
-.noRoomContainer {
-  height: 85%;
+.activeChat {
+  background-color: hsl(318, 96%, 37%) !important;
+  color: white !important;
+}
+
+.activeChat .roomMessage {
+  color: white;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import "./ChatWindow.css";
 import MessageBubble from "./MessageBubble";
 
-function ChatWindow() {
+function ChatWindow(props) {
   const messages = [
     {
       message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
@@ -53,7 +53,7 @@ function ChatWindow() {
       recepteur: 1,
     },
   ];
-  return (
+  return props.currentRoom ? (
     <div className="chatWindowContainer">
       <div className="chatContentContainer">
         {messages.map((element) => (
@@ -76,6 +76,8 @@ function ChatWindow() {
         </div>
       </div>
     </div>
+  ) : (
+    <div className="noChatWindowContainer"></div>
   );
 }
 
