@@ -20,7 +20,7 @@ const EventCard = (props) => {
       <div className="bottom">
         <h2 className="title">{props.title}</h2>
         <p>
-          {props.text.length > 100 ? props.text.slice(0, 100) + "..." : props.text}
+          {props.description.length > 100 ? props.description.slice(0, 100) + "..." : props.description}
           <a href={`/evenements/${props.id}`}>
             Continue
             <AiOutlineDoubleRight size="1rem" className="" />

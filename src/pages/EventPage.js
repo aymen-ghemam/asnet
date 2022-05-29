@@ -8,6 +8,10 @@ const EventPage = () => {
   const [state, setState] = useState({events: []})
 
   useEffect(() => {
+    getEvents();
+  }, [])
+  
+  const getEvents = () => {
     axios.get('/api/evenements', {
     })
     .then(res => {
@@ -15,8 +19,16 @@ const EventPage = () => {
         setState({...state, events: res.data.evenements});
       }
     })
-  }, [])
-  
+  }
+  // const search = ()=>{
+  //   state.events.filter(event => event.titre.includes(e))
+  // }
+
+  const handleSearch = (e) => {
+    if (e.target.value === '') getEvents();
+    else setState({...state, events: state.events.filter(event => event.titre.includes(e.target.value))})
+  }
+
   return (
     <section className="articles">
       <section className="headerContainer articleHeader">
@@ -33,11 +45,12 @@ const EventPage = () => {
           <img src="./assets/artcileHeaderIllus.svg" alt="" />
         </div>
       </section>
-      <SearchBar />
+      <SearchBar handleSearch = {handleSearch} />
       <div className="flex list">
         {
           state.events.map(event => 
             <EventCard 
+            key = {event.id_evenement}
             id={event.id_evenement}
             date = {event.date_evenement}
             title={event.titre}

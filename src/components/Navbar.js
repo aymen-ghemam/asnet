@@ -22,7 +22,7 @@ const Navbar = (props) => {
             <a href="#">Découvrir ASNET</a>
           </li>
           <li>
-            <a href="#">Nos actualité</a>
+            <a href="/evenements">Nos actualité</a>
           </li>
           <li>
             <a href="/articles">Articles</a>
