@@ -3,26 +3,27 @@ import "./Card.css";
 import Tag from "./Tag";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 
-const Card = () => {
-  const text =
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, accusantium sunt esse voluptas dignissimos recusandae laudantium tempora soluta quod dolorum eveniet deserunt quas, sint atque id harum tenetur, a eaque.";
+const Card = (props) => {
+  
   return (
     <div className="card">
       <div className="top">
         <div className="tags flex">
-          <Tag />
-          <Tag />
-          <Tag />
+          {
+            props.tags.map(tag => 
+              <Tag name = {tag.nom} />  
+            )
+          }
         </div>
       </div>
       <div className="bottom">
-        <h2 className="title">This is a title.</h2>
+        <h2 className="title">{props.title}</h2>
         <p>
-          {text.length > 100 ? text.slice(0, 100) + "..." : text}
-          <button>
+          {props.description.length > 100 ? props.description.slice(0, 100) + "..." : props.description}
+          <a href={`/articles/${props.id}`}>
             Continue
             <AiOutlineDoubleRight size="1rem" className="" />
-          </button>
+          </a>
         </p>
       </div>
     </div>

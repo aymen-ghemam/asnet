@@ -166,12 +166,17 @@ svg {
   margin: 0 auto;
   padding: 2em 1em;
   background-color: #f5fbff;
+  position: relative;
 }
 .title {
   font-size: 28px;
   color: #fef6fc;
 }
+.article .title {
+  color: var(--dark-blue);
+}
 .article .main-img {
+  /* display: block; */
   margin: 0 auto;
   max-height: 300px;
   aspect-ratio: 16/9;
@@ -186,7 +191,7 @@ svg {
   margin: 0.5em auto;
 }
 .article-section .img {
-  /* height: 300px; */
+  max-height: 300px;
   width: auto;
   aspect-ratio: 16 / 9;
 }
@@ -196,6 +201,11 @@ svg {
 }
 .article-section .section-body p {
   width: fit-content;
+}
+.article .edit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .headerContainer {
@@ -486,6 +496,7 @@ svg {
     width: 100%;
     padding: 1em;
   }
+
   .landing {
     min-height: calc(90vh - 70px);
     padding: 5em;

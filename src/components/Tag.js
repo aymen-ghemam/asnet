@@ -1,11 +1,11 @@
 import React from 'react'
 import './Tag.css'
 
-const Tag = () => {
+const Tag = (props) => {
   return (
     <div className='tag'>
         <div className="left"></div>
-        Tag4
+        {props.name}
         <div className="right"></div>
     </div>
   )

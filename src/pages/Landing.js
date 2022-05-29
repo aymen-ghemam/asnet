@@ -1,46 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../components/Button";
 import Carousel from "../components/Carousel";
 import { useEffect } from "react";
+import axios from "axios";
 
 const Landing = () => {
-  const list = [
-    {
-      title: "Event 1",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Previous",
-      img: "./assets/Ramadan-2022.webp",
-      link: "#",
-    },
-    {
-      title: "Event 2",
-      description:
-        "something ..something ..something ..something ..something ..something ..something ...",
-      img: "./assets/Ramadan-2022.webp",
-      link: "#",
-    },
-    {
-      title: "Event 3",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, consequatur aperiam! Qui nam odit optio. Amet itaque, possimus iure modi quisquam .",
-      img: "./assets/Ramadan-2022.webp",
-      link: "#",
-    },
-    {
-      title: "Event 4",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, consequatur aperiam! Qui nam odit optio. Amet itaque, possimus iure modi quisquam .",
-      img: "./assets/Ramadan-2022.webp",
-      link: "#",
-    },
-    {
-      title: "Event 5",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, consequatur aperiam! Qui nam odit optio. Amet itaque, possimus iure modi quisquam .",
-      img: "./assets/Ramadan-2022.webp",
-      link: "#",
-    },
-  ];
+  const [state, setState] = useState({events: []})
+
+  useEffect(() => {
+    axios.get('/api/actualites', {
+    })
+    .then(res => {
+      if(res.data.error === false) {
+        // console.log(res.data.evenements);
+        setState({...state, events: res.data.evenements});
+      }
+    })
+  }, [])
 
   return (
     <div>
@@ -101,7 +77,7 @@ const Landing = () => {
           <h2 className="title">Nos dernières actualités</h2>
         </div>
         <div className="carouselContainer">
-          <Carousel list={list} />
+          <Carousel />
         </div>
       </section>
       <section className="ourContent box">
