@@ -1,0 +1,26 @@
+.upload {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+}
+.upload input {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 50;
+}
+.upload .plus {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 10;
+}
+/* .upload img {
+  width: 100%;
+} */

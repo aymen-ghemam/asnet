@@ -14,7 +14,7 @@ import axios from "axios";
 
 function App() {
   const [state, setstate] = useState({
-    isLoggedin: false, 
+    isLoggedIn: false, 
     loading: true,
     user: null,
     token: localStorage.getItem('ASNET_ACCESS_TOKEN')
@@ -35,14 +35,14 @@ function App() {
     .then(res => {
       if(res.data.error === false) {
         localStorage.setItem('id_user', res.data.user.id_user);
-        setstate({loading: false, isLoggedin: true, user: res.data.user})
+        setstate({...state, loading: false, isLoggedIn: true, user: res.data.user});
       }
       else setstate({...state, loading: false}) 
     })
   }
   const login = (token) => {
     localStorage.setItem('ASNET_ACCESS_TOKEN',token);
-    // setstate({...state, token})
+    setstate({...state, token, isLoggedin: true})
     window.location.reload();
   }
 
@@ -52,7 +52,7 @@ function App() {
   return (
     state.loading === true ? 'loading...':
     <div id="pageContainer">
-      <Navbar setSignInHidden={setSignInHidden} isLoggedin = {state.isLoggedin} />
+      <Navbar setSignInHidden={setSignInHidden} isLoggedIn = {state.isLoggedIn} />
       <SignIn
         login = {login}
         signInHidden={signInHidden}

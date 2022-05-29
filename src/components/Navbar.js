@@ -38,6 +38,7 @@ const Navbar = (props) => {
           <li>
             <a href="/salon">Salon chat</a>
           </li>
+          {props.isLoggedIn === true ? '': 
           <li className="signInBtnContainer">
             {props.isLoggedIn === true ? (
               ""
@@ -50,6 +51,7 @@ const Navbar = (props) => {
               </button>
             )}
           </li>
+          }
         </ul>
       </nav>
     </div>
