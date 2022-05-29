@@ -195,3 +195,8 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.msg {
+  text-align: center;
+  color: red;
+}

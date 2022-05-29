@@ -1,9 +1,26 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import "./SignIn.css";
 
 const SignIn = (props) => {
+  const [state, setState] = useState({error: false, msg: ''})
   const handleSubmit = (e) => {
     e.preventDefault();
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    if (email !== '' && password !== '') {
+      axios.post('/api/login', {
+        email: email,
+        password: password
+      })
+      .then(res => {
+          if (res.data.error === false) {
+              props.login(res.data.token)
+          }
+          else setState({...state, error: true, msg: res.data.msg})
+      });
+    }
   };
   return (
     <div
@@ -58,7 +75,7 @@ const SignIn = (props) => {
               type="submit"
               value="Connecter"
               className="connectBtn"
-              onClick={() => props.setSignInHidden((prev) => !prev)}
+
             />
           </div>
           <div>
@@ -73,6 +90,8 @@ const SignIn = (props) => {
             </button>
           </div>
         </form>
+
+        <p className='msg'>{state.error === true? state.msg: ''}</p>
       </div>
     </div>
   );
