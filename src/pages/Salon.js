@@ -1,13 +1,11 @@
 import React from "react";
-import ArticleSection from "../components/ArticleSection";
-import Chats from "../components/Chats";
-
 import { useState } from "react";
+import ChatRoomsList from "../components/ChatRoomsList";
 
 const Salon = () => {
   return (
     <div className="salonContainer">
-      <Chats />
+      <ChatRoomsList />
     </div>
   );
 };

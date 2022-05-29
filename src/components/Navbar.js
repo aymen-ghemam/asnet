@@ -36,7 +36,7 @@ const Navbar = (props) => {
             <a href="">Faire un don</a>
           </li>
           <li>
-            <a href="">Salon chat</a>
+            <a href="/salon">Salon chat</a>
           </li>
           {props.isLoggedIn === true ? '': 
           <li className="signInBtnContainer">
@@ -46,6 +46,16 @@ const Navbar = (props) => {
             >
               Se connecter
             </button>
+            {props.isLoggedIn === true ? (
+              ""
+            ) : (
+              <button
+                className="signInBtn"
+                onClick={() => props.setSignInHidden((prev) => !prev)}
+              >
+                Se connecter
+              </button>
+            )}
           </li>
           }
         </ul>

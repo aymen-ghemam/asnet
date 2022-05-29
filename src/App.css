@@ -445,7 +445,11 @@ svg {
   font-weight: 700;
 }
 .salonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
+  width: 100vw;
 }
 
 @media (max-width: 40em) {
