@@ -53,48 +53,33 @@ function ChatRoomsList({ props }) {
   return (
     <div className="chatRoomsContainer">
       <div className="chatRoomsTitle">
-        {insideRoom ? (
-          <button
-            className="returnBtn"
-            onClick={() => {
-              setchatName("Salon chat");
-              setinsideRoom((prev) => !prev);
-            }}
-          >
-            return
-          </button>
-        ) : null}
-        <h3>{chatName}</h3>
+        <h3>Salon chat</h3>
       </div>
-      {insideRoom ? (
-        <ChatWindow />
-      ) : (
-        <div className="noRoomContainer">
-          <div className="searchBarContainer">
-            <div className="searchChatContainer">
-              <input
-                type="text"
-                placeholder="Search"
-                className="searchRoomInput"
-              />
-            </div>
-            <div className="sendNewMessageContainer">
-              <button className="newMessageBtn">New</button>
-            </div>
+      <div className="noRoomContainer">
+        <div className="searchBarContainer">
+          <div className="searchChatContainer">
+            <input
+              type="text"
+              placeholder="Search"
+              className="searchRoomInput"
+            />
           </div>
-          <div className="roomsListContainer">
-            {chatList.map((element) => (
-              <Room
-                info={element}
-                onClick={() => {
-                  setinsideRoom((prev) => !prev);
-                  setchatName(element.name);
-                }}
-              />
-            ))}
+          <div className="sendNewMessageContainer">
+            <button className="newMessageBtn">New</button>
           </div>
         </div>
-      )}
+        <div className="roomsListContainer">
+          {chatList.map((element) => (
+            <Room
+              info={element}
+              onClick={() => {
+                setinsideRoom((prev) => !prev);
+                setchatName(element.name);
+              }}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
