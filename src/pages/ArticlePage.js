@@ -7,6 +7,10 @@ const ArticlePage = () => {
   const [state, setState] = useState({articles: []})
 
   useEffect(() => {
+    getArticles();
+  }, [])
+
+  const getArticles = () => {
     axios.get('/api/articles', {
     })
     .then(res => {
@@ -14,7 +18,12 @@ const ArticlePage = () => {
         setState({...state, articles: res.data.articles});
       }
     })
-  }, [])
+  }
+
+  const handleSearch = (e) => {
+    if (e.target.value === '') getArticles();
+    else setState({...state, articles: state.articles.filter(article => article.titre.includes(e.target.value))})
+  }
   
   return (
     <section className="articles">
@@ -32,7 +41,7 @@ const ArticlePage = () => {
           <img src="./assets/artcileHeaderIllus.svg" alt="" />
         </div>
       </section>
-      <SearchBar />
+      <SearchBar handleSearch = {handleSearch} />
       <div className="flex list">
         {
           state.articles.map(article => 
@@ -44,6 +53,7 @@ const ArticlePage = () => {
             description = {article.description}
             tags = {article.tags}     
             date={article.date} 
+            key={article.id_article}
             />  
           )
         }

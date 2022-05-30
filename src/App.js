@@ -73,8 +73,8 @@ function App() {
           <Route exact path="/articles/:id" element={<Article isLoggedIn={state.isLoggedIn} />} />
           <Route exact path="/evenements" element={<EventPage />}></Route>
           <Route exact path="/evenements/:id" element={<Event isLoggedIn={state.isLoggedIn} />} />
-          <Route exact path="/salon" element={<Salon />} />
-          <Route path="/" element={<Landing />}></Route>
+          {state.isLoggedIn && <Route exact path="/salon" element={<Salon />} />}
+          <Route path="*" element={<Landing />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />
