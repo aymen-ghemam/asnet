@@ -1,7 +1,6 @@
 import axios from "axios";
-import React, { useState } from "react";
-import ImageUpload from "./ImageUpload";
-import "./SignUp.css";
+import React, { Fragment, useState } from "react";
+import ImageUpload from "../components/ImageUpload";
 
 const SignUp = (props) => {
   const [state, setState] = useState({ error: false, msg: "" });
@@ -55,17 +54,23 @@ const SignUp = (props) => {
   };
 
   return (
-    <div
-      className={
-        "signUpContainer " + (props.signUpHidden ? " hidden " : " visible ")
-      }
-    >
-      <div
-        className="closePopUpArea"
-        onClick={() => props.setSignUpHidden((prev) => !prev)}
-      ></div>
-      <div className="signUpPopUp">
-        <div className="signUpImageContainer"></div>
+    <Fragment>
+      <section className="headerContainer articleHeader">
+        <div className="headerDesc articleHeaderDesc">
+          <h1>This is a title</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            tempus mi mi, eu porttitor justo suscipit pretium. Integer non
+            facilisis
+          </p>
+          {/* <Button link='#' text='Soutenire notre action' /> */}
+        </div>
+        {/* <div className="articleHeaderImage">
+          <img src="./assets/artcileHeaderIllus.svg" alt="" />
+        </div> */}
+      </section>
+      <div className="signUpContainer">
+        {/* <div className="signUpPopUp"> */}
         <form className="signUpInfoContainer" onSubmit={handleSubmit}>
           <div className="signUpInfoTitle">
             <h3>S'inscrire</h3>
@@ -162,26 +167,32 @@ const SignUp = (props) => {
             /> */}
             <ImageUpload onUpload={handleImageUpload} />
           </div>
-          <div className="signUpInputContainer">
-            <label htmlFor="photoInput">Photo du carte:</label>
-            {/* <input
+          {specialist ? (
+            <Fragment>
+              <div className="signUpInputContainer">
+                <label htmlFor="photoInput">Photo du carte:</label>
+                {/* <input
               type="file"
               name="photo"
               id="photoInput"
               className="hidden"
             
             /> */}
-            <ImageUpload onUpload={handleImageUpload} />
-          </div>
-          <div className="signUpInputContainer">
-            <label htmlFor="speciliteInput">Spécialite :</label>
-            <input
-              type="text"
-              name="specialite"
-              id="speciliteInput"
-              className="signUpInput"
-            />
-          </div>
+                <ImageUpload onUpload={handleImageUpload} />
+              </div>
+              <div className="signUpInputContainer">
+                <label htmlFor="speciliteInput">Spécialite :</label>
+                <input
+                  type="text"
+                  name="specialite"
+                  id="speciliteInput"
+                  className="signUpInput"
+                />
+              </div>
+            </Fragment>
+          ) : (
+            <Fragment></Fragment>
+          )}
           <p className="msg">{state.error === true ? state.msg : ""}</p>
           <div className="submitSignUpContainer">
             <button className="connectBtn">S'inscrire</button>
@@ -198,8 +209,9 @@ const SignUp = (props) => {
             </div>
           </div>
         </form>
+        {/* </div> */}
       </div>
-    </div>
+    </Fragment>
   );
 };
 

@@ -210,8 +210,8 @@ svg {
 
 .headerContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  /* flex-direction: row; */
+  justify-content: center;
   min-height: calc(100vh - 70px);
   background-image: url("../public/assets/landingBG1.svg");
   background-size: cover;
@@ -220,7 +220,7 @@ svg {
 }
 
 .articleHeader {
-  background-image: url("../public/assets/wavesBG.svg");
+  background-image: url("../public/assets/PageHeader.svg");
   background-size: contain;
   min-height: calc(70vh - 70px);
 }
@@ -477,6 +477,129 @@ svg {
   border-radius: 20px 20px 0 0;
   border-bottom: 1px solid black;
 }
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.closePopUpArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.signUpContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.signUpImageContainer {
+  height: 100%;
+  width: 45%;
+  border-radius: 10px 0 0 10px;
+  background-color: gray;
+}
+.signUpInfoContainer {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+}
+.signUpInput {
+  margin: 0.5rem 0 0.5rem 0;
+  height: 2.3rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+  background-color: #fff;
+  color: #011b2c;
+}
+
+.signUpInput:focus {
+  border: 0;
+  outline: 4px solid #980b6e5e;
+  background-color: hsl(318, 100%, 98%);
+  transition: 0.1s;
+}
+
+.signUpInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.signUpInputContainer label {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: hsl(233, 24%, 31%);
+}
+.signUpInfoTitle h3 {
+  margin: 10px 0 20px 0;
+  font-size: 16px;
+  color: #0e185f;
+}
+.additionalInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-bottom: 1.5rem;
+}
+.specialisteContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-bottom: 1.5rem;
+}
+.isSpecialisteContainer {
+}
+
+.nomPrenomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.prenomInputContainer {
+  width: 45%;
+}
+.nomInputContainer {
+  width: 45%;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.submitSignUpContainer {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#sexeInput {
+  display: block;
+  /* width: 100%;
+  height: 5%; */
+}
+
+#sexeInput option:active {
+  background-color: red;
+}
+
 @media (max-width: 40em) {
   .row {
     flex-direction: column;
