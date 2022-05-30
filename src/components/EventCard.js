@@ -1,36 +1,34 @@
-import React from 'react'
-import './EventCard.css'
+import React from "react";
+import "./Card.css";
+import Tag from "./Tag";
+import { AiOutlineDoubleRight } from "react-icons/ai";
 
-const EventCard = () => {
+const EventCard = (props) => {
+  
   return (
-    <div className="event-card">
-        <div className="image">
-            <img src="./assets/projets/projet1.png" alt="" />
+    <div className="card">
+      <div className="top">
+        <div className="tags flex">
+          {props.date}
+          {/* {
+            props.tags.map(tag => 
+              <Tag name = {tag.nom} />  
+            )
+          } */}
         </div>
-        <div className="body">
-            <h1>This is just an exemple to fill the space of some kinda long boring article.</h1>
-            <p className='date'><span>2021/10/10</span></p>
-            <p className='desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. A non at architecto nam, inventore nihil, nemo numquam mollitia necessitatibus dolorem.</p>
-            <div className="tags flex">
-                <p>Tags: </p>
-                <div className='flex'>
-                    <span>one</span>
-                    <span>two</span>
-                    <span>three</span>
-                    <span>one</span>
-                    <span>two</span>
-                    <span>three</span>
-                    <span>one</span>
-                    <span>two</span>
-                    <span>three</span>
-                </div>
-            </div>
-        </div>
-        <a className='link' href='#'>
-            Lire l'article
-        </a>
+      </div>
+      <div className="bottom">
+        <h2 className="title">{props.title}</h2>
+        <p>
+          {props.description.length > 100 ? props.description.slice(0, 100) + "..." : props.description}
+          <a href={`/evenements/${props.id}`}>
+            Continue
+            <AiOutlineDoubleRight size="1rem" className="" />
+          </a>
+        </p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default EventCard
+export default EventCard;

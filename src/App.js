@@ -11,6 +11,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Article from "./pages/Article";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import EventPage from "./pages/EventPage";
+import Event from "./pages/Event";
 
 function App() {
   const [state, setstate] = useState({
@@ -66,10 +68,13 @@ function App() {
       />
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Landing />}></Route>
+          
           <Route exact path="/articles" element={<ArticlePage />}></Route>
-          <Route exact path="/articles/1" element={<Article />} />
-          <Route exact path="/salon" element={<Salon />} />
+          <Route exact path="/articles/:id" element={<Article isLoggedIn={state.isLoggedIn} />} />
+          <Route exact path="/evenements" element={<EventPage />}></Route>
+          <Route exact path="/evenements/:id" element={<Event isLoggedIn={state.isLoggedIn} />} />
+          {state.isLoggedIn && <Route exact path="/salon" element={<Salon />} />}
+          <Route path="*" element={<Landing />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />

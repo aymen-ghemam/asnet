@@ -1,35 +1,39 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
+import EventCard from "../components/EventCard";
 import SearchBar from "../components/SearchBar";
 
-const ArticlePage = () => {
-  const [state, setState] = useState({articles: []})
+const EventPage = () => {
+  const [state, setState] = useState({events: []})
 
   useEffect(() => {
-    getArticles();
+    getEvents();
   }, [])
-
-  const getArticles = () => {
-    axios.get('/api/articles', {
+  
+  const getEvents = () => {
+    axios.get('/api/evenements', {
     })
     .then(res => {
       if(res.data.error === false) {
-        setState({...state, articles: res.data.articles});
+        setState({...state, events: res.data.evenements});
       }
     })
   }
+  // const search = ()=>{
+  //   state.events.filter(event => event.titre.includes(e))
+  // }
 
   const handleSearch = (e) => {
-    if (e.target.value === '') getArticles();
-    else setState({...state, articles: state.articles.filter(article => article.titre.includes(e.target.value))})
+    if (e.target.value === '') getEvents();
+    else setState({...state, events: state.events.filter(event => event.titre.includes(e.target.value))})
   }
-  
+
   return (
     <section className="articles">
       <section className="headerContainer articleHeader">
         <div className="headerDesc articleHeaderDesc">
-          <h1>This is a title</h1>
+          <h1>Nos Evenements</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
             tempus mi mi, eu porttitor justo suscipit pretium. Integer non
@@ -44,16 +48,14 @@ const ArticlePage = () => {
       <SearchBar handleSearch = {handleSearch} />
       <div className="flex list">
         {
-          state.articles.map(article => 
-            <Card 
-            id={article.id_article}
-            title={article.titre}
-            text={article.text}    
-            image = {article.image}
-            description = {article.description}
-            tags = {article.tags}     
-            date={article.date} 
-            key={article.id_article}
+          state.events.map(event => 
+            <EventCard 
+            key = {event.id_evenement}
+            id={event.id_evenement}
+            date = {event.date_evenement}
+            title={event.titre}
+            description={event.description} 
+            image = {event.image}
             />  
           )
         }
@@ -62,4 +64,4 @@ const ArticlePage = () => {
   );
 };
 
-export default ArticlePage;
+export default EventPage;

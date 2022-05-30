@@ -24,11 +24,12 @@ function ChatRoomsList(props) {
           </div>
         </div>
         <div className="roomsListContainer">
-          {props.chatList.map((element) => (
+          {props.chatList.map((element, index) => (
             <Room
-              current={props.currentRoom.id == element.id ? true : false}
+              current={props.currentRoom === element.id ? true : false}
               info={element}
-              onClick={() => props.setcurrentRoom(element)}
+              onClick={() => props.setcurrentRoom(element.id)}
+              key={element.id}
             />
           ))}
         </div>

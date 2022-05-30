@@ -2,6 +2,11 @@ import React from "react";
 import "./Navbar.css";
 
 const Navbar = (props) => {
+  const logout = () => {
+    localStorage.removeItem('ASNET_ACCESS_TOKEN');
+    localStorage.removeItem('id_user');
+    window.location.reload();
+  }
   return (
     <div className="navbar flex">
       <a href="/" className="flex logo-wrapper">
@@ -22,7 +27,7 @@ const Navbar = (props) => {
             <a href="#">Découvrir ASNET</a>
           </li>
           <li>
-            <a href="#">Nos actualité</a>
+            <a href="/evenements">Nos actualité</a>
           </li>
           <li>
             <a href="/articles">Articles</a>
@@ -35,23 +40,17 @@ const Navbar = (props) => {
           <li>
             <a href="">Faire un don</a>
           </li>
-          <li>
-            <a href="/salon">Salon chat</a>
-          </li>
-          {props.isLoggedIn === true ? '': 
+          {props.isLoggedIn && <li><a href="/salon">Salon chat</a></li>}
+          {!props.isLoggedIn && 
           <li className="signInBtnContainer">
-            {props.isLoggedIn === true ? (
-              ""
-            ) : (
               <button
                 className="signInBtn"
                 onClick={() => props.setSignInHidden((prev) => !prev)}
               >
                 Se connecter
               </button>
-            )}
-          </li>
-          }
+          </li>}
+          {props.isLoggedIn && <li onClick = {logout}><a href="#">Logout</a></li>}
         </ul>
       </nav>
     </div>

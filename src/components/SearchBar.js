@@ -2,13 +2,13 @@ import React from "react";
 import { AiOutlineSearch, AiFillCaretDown } from "react-icons/ai";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   return (
     <div className="search-bar">
       <div className="searchIcon">
         <AiOutlineSearch size="1.8rem" color="#CCCCCC" className="icon" />
       </div>
-      <input className="searchInput" type="text" placeholder="Search" />
+      <input onChange={props.handleSearch} className="searchInput" type="text" placeholder="Search" />
       <button className="searchBtn">Search</button>
     </div>
     // <div className='search-bar flex'>
