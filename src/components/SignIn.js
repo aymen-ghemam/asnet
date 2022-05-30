@@ -79,7 +79,7 @@ const SignIn = (props) => {
             />
           </div>
           <div>
-            <button
+            {/* <button
               className="switchSignBtn"
               onClick={() => {
                 props.setSignInHidden((prev) => !prev);
@@ -87,7 +87,8 @@ const SignIn = (props) => {
               }}
             >
               vous n'avez pas de compte ? S'inscrire
-            </button>
+            </button> */}
+            <a href='signup' className='switchSignBtn'>vous n'avez pas de compte ? S'inscrire</a>
           </div>
         </form>
 

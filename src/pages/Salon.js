@@ -5,9 +5,10 @@ import ChatRoomsList from "../components/ChatRoomsList";
 import ChatWindow from "../components/ChatWindow";
 
 const Salon = () => {
-  const [currentRoom, setcurrentRoom] = useState(1);
+  const [currentRoom, setcurrentRoom] = useState({});
   const [searchInput, setsearchInput] = useState("");
   const [chatList, setchatList] = useState([]);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     axios.get('api/conversations', {
@@ -23,50 +24,6 @@ const Salon = () => {
   
   }, [])
   
-  // const chatList = [
-  //   {
-  //     id: 1,
-  //     name: "Hamaidi Youcef Islam",
-  //     lastMessage: `Lorem ipsum dolor, `,
-  //     image: null,
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Ghamem Hammed Aymen",
-  //     lastMessage: `Lorem ipsum dolor, `,
-  //     image: null,
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Hamaidi Youcef Islam",
-  //     lastMessage: `Lorem ipsum dolor, `,
-  //     image: null,
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Ghamem Hammed Aymen",
-  //     lastMessage: `Lorem ipsum dolor, `,
-  //     image: null,
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "Hamaidi Youcef Islam",
-  //     lastMessage: `Lorem ipsum dolor, `,
-  //     image: null,
-  //   },
-  //   {
-  //     id: 6,
-  //     name: "Hamaidi Youcef Islam",
-  //     lastMessage: `Lorem ipsum dolor, `,
-  //     image: null,
-  //   },
-  //   {
-  //     id: 7,
-  //     name: "Hamaidi Youcef Islam",
-  //     lastMessage: `Lorem ipsum dolor, `,
-  //     image: null,
-  //   },
-  // ];
   return (
     <div className="salonContainer">
       {/* <div className="chatRoomsTitle">
@@ -87,8 +44,10 @@ const Salon = () => {
           }
           currentRoom={currentRoom}
           setcurrentRoom={setcurrentRoom}
+          setActive={setActive}
         />
-        {/* <ChatWindow currentRoom={currentRoom} /> */}
+        {active===true && <ChatWindow active={active} currentRoom={currentRoom} />}
+        
       </div>
     </div>
   );
