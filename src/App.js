@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import SignIn from "./components/SignIn";
 import SignUpPage from "./pages/SignUpPage";
 import Landing from "./pages/Landing";
+import CreateArticle from "./pages/CreateArticle";
 import Footer from "./components/Footer";
 import Salon from "./pages/Salon";
 import ArticlePage from "./pages/ArticlePage";
@@ -69,7 +70,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/SignUp" element={<SignUpPage />} />
-          <Route exact path="/articles" element={<ArticlePage />}></Route>
+          <Route exact path="/articles" element={<ArticlePage />} />
+          <Route exact path="/createArticle" element={<CreateArticle />} />
           <Route
             exact
             path="/articles/:id"

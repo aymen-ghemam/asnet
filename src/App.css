@@ -599,6 +599,18 @@ input[type="number"]::-webkit-inner-spin-button {
 #sexeInput option:active {
   background-color: red;
 }
+.createArticleContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1vh;
+}
+.createArticleHeader {
+  /* font-size: 2em; */
+  height: 10vh;
+}
+.createArticleHeader h1 {
+  font-weight: 400;
+}
 
 @media (max-width: 40em) {
   .row {
