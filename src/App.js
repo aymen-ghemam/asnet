@@ -68,7 +68,7 @@ function App() {
       />
       <BrowserRouter>
         <Routes>
-          <Route exact path="/SignUp" element={<SignUpPage />} />
+          <Route exact path="/signup" element={<SignUpPage />} />
           <Route exact path="/articles" element={<ArticlePage />}></Route>
           <Route
             exact

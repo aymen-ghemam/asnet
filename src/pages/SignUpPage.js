@@ -1,56 +1,82 @@
 import axios from "axios";
 import React, { Fragment, useState } from "react";
 import ImageUpload from "../components/ImageUpload";
+import {useNavigate} from "react-router-dom"
 
 const SignUp = (props) => {
   const [state, setState] = useState({ error: false, msg: "" });
   const [photo, setPhoto] = useState("");
+  const [licence, setLicence] = useState("");
+  const navigate = useNavigate();
 
   const handleImageUpload = (url) => {
-    console.log(url);
     setPhoto(url);
   };
+  const handleImageUpload1 = (url) => {
+    console.log(url);
+    setLicence(url);
+  };
+
   const [specialist, setspecialist] = useState(false);
 
   const handleSubmit = (e) => {
-    console.log("rani hna");
     e.preventDefault();
-    const email = e.target[0].value;
-    const nom = e.target[1].value;
-    const prenom = e.target[2].value;
-    const password = e.target[3].value;
-    const numero = e.target[4].value;
-    const sexe = e.target[5].value;
-    const naissance = e.target[6].value;
-    // const photo = e.target[7].value;
+    
+    const email = e.target[1].value;
+    const nom = e.target[2].value;
+    const prenom = e.target[3].value;
+    const password = e.target[4].value;
+    const numero = e.target[5].value;
+    const sexe = e.target[6].value;
+    const naissance = e.target[7].value;
+    const specialite = e.target[8].value;
 
-    if (
-      email !== "" &&
-      password !== "" &&
-      nom !== "" &&
-      prenom !== "" &&
-      numero !== "" &&
-      photo !== ""
-    ) {
-      axios
-        .post("/api/users", {
-          nom,
-          prenom,
-          email,
-          password,
-          numero,
-          sexe,
-          naissance,
-          photo,
-        })
-        .then((res) => {
-          if (res.data.error === false) {
-            window.location.reload();
-            console.log(res.data.error);
-          } else setState({ ...state, error: true, msg: res.data.msg });
-        });
-    } else
-      setState({ ...state, error: true, msg: "Please fill all the fields!" });
+    if(specialist === true){
+      if (email !== "" && password !== "" && nom !== "" && prenom !== "" && numero !== "" && photo !== "" && licence !== '' && specialite !== '') {
+        axios
+          .post("/api/specialistes", {
+            nom,
+            prenom,
+            email,
+            password,
+            numero,
+            sexe,
+            naissance,
+            photo,
+            licence,
+            specialite
+          })
+          .then((res) => {
+            if (res.data.error === false) {
+              navigate('/');
+            } else setState({ ...state, error: true, msg: res.data.msg });
+          });
+      } 
+      else
+        setState({ ...state, error: true, msg: "Please fill all the fields!" });
+    }
+    else{
+      if (email !== "" && password !== "" && nom !== "" && prenom !== "" && numero !== "" && photo !== "") {
+        axios
+          .post("/api/users", {
+            nom,
+            prenom,
+            email,
+            password,
+            numero,
+            sexe,
+            naissance,
+            photo,
+          })
+          .then((res) => {
+            if (res.data.error === false) {
+              navigate('/');
+            } else setState({ ...state, error: true, msg: res.data.msg });
+          });
+      } 
+      else
+        setState({ ...state, error: true, msg: "Please fill all the fields!" });
+    }
   };
 
   return (
@@ -178,7 +204,7 @@ const SignUp = (props) => {
               className="hidden"
             
             /> */}
-                <ImageUpload onUpload={handleImageUpload} />
+                <ImageUpload onUpload={handleImageUpload1} />
               </div>
               <div className="signUpInputContainer">
                 <label htmlFor="speciliteInput">Spécialite :</label>
@@ -196,17 +222,7 @@ const SignUp = (props) => {
           <p className="msg">{state.error === true ? state.msg : ""}</p>
           <div className="submitSignUpContainer">
             <button className="connectBtn">S'inscrire</button>
-            <div>
-              <button
-                className="switchSignBtn"
-                onClick={() => {
-                  props.setSignInHidden((prev) => !prev);
-                  props.setSignUpHidden((prev) => !prev);
-                }}
-              >
-                vous n'avez pas de compte ? S'inscrire
-              </button>
-            </div>
+            
           </div>
         </form>
         {/* </div> */}
