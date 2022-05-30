@@ -3,25 +3,29 @@ import Section from "../components/Section";
 
 function CreateArticle() {
   const [sections, setsections] = useState(["section"]);
+  const [images, setImages] = useState({});
   const handleSubmit = (e) => {
     e.preventDefault();
     const article = {
-      articleHeader: {
-        title: e.target[0].value,
-        description: e.target[1].value,
-      },
+      title: e.target[0].value,
+      description: e.target[1].value
     };
     const sectionsList = [];
 
-    for (let i = 1; i <= sections.length; i++) {
+    for (let i = 0; i < sections.length; i++) {
       let values = {};
       for (let j = 3; j < e.target.length; j++) {
         if (
           e.target[j].attributes["data-sectionnumber"] &&
           e.target[j].attributes["data-sectionnumber"].nodeValue == i
         ) {
-          console.log(e.target[j].attributes["name"].nodeValue);
+          // console.log(e.target[j].attributes["name"]);
           values[e.target[j].attributes["name"].nodeValue] = e.target[j].value;
+          values['indice'] = e.target[j].attributes["data-sectionnumber"].nodeValue;
+
+          values['image'] = images[e.target[j].attributes["data-sectionnumber"].nodeValue] || '';
+          // console.log(images[e.target[j].attributes["data-sectionnumber"].nodeValue]);
+          // console.log(images);
         }
       }
       sectionsList.push(values);
@@ -29,6 +33,10 @@ function CreateArticle() {
     article.sections = sectionsList;
     console.log(article);
   };
+
+  const uploadImage = (url, index) => {
+    setImages({...images, [index]: url});
+  }
 
   return (
     <Fragment>
@@ -64,7 +72,7 @@ function CreateArticle() {
           </div>
         </div>
         {sections.map((element, index) => (
-          <Section index={index + 1} />
+          <Section handleUpload = {uploadImage} index={index} />
         ))}
       </form>
       <div className="addNewSection">

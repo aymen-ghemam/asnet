@@ -1,6 +1,10 @@
+import axios from "axios";
 import React, { Fragment } from "react";
+import ImageUpload from "./ImageUpload";
+import SectionImageUpload from "./SectionImageUpload";
 
 function Section(props) {
+
   return (
     <Fragment>
       <div className="addSection">
@@ -10,7 +14,7 @@ function Section(props) {
         <div className="sectionHeaderInputContainer">
           <label htmlFor="sectionHeader">Titre :</label>
           <input
-            name="sectionTitle"
+            name="titre"
             data-sectionNumber={props.index}
             id="sectionHeader"
             type="text"
@@ -20,7 +24,7 @@ function Section(props) {
           <label htmlFor="sectionContenu">Contenu :</label>
           <textarea
             data-sectionNumber={props.index}
-            name="sectionContenu"
+            name="contenu"
             id="sectionContenu"
             cols="30"
             rows="10"
@@ -28,7 +32,8 @@ function Section(props) {
         </div>
         <div className="sectionImageInputContainer">
           <label htmlFor="articleImage">Image :</label>
-          <input type="file" data-sectionNumber={props.index} />
+          {/* <input name='image' type="file" data-sectionNumber={props.index} onChange={handleUpload} accept ="image/*" /> */}
+          <SectionImageUpload index={props.index} onUpload = {props.handleUpload} />
         </div>
       </div>
     </Fragment>
