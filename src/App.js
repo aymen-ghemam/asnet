@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import EventPage from "./pages/EventPage";
 import Event from "./pages/Event";
+import Bot from "./components/Bot";
 
 function App() {
   const [state, setstate] = useState({
@@ -91,6 +92,7 @@ function App() {
           <Route path="*" element={<Landing />}></Route>
         </Routes>
       </BrowserRouter>
+      <Bot />
       <Footer />
     </div>
   );
