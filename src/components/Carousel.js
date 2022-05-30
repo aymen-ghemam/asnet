@@ -12,18 +12,18 @@ const Carousel = (props) => {
   });
 
   useEffect(() => {
-    axios.get('/api/actualites', {
-    })
-    .then(res => {
-      if(res.data.error === false) {
-        // console.log(res.data.evenements);
+    if (props.hr) {
+      setState({ ...state, list: props.hr });
+    } else {
+      axios.get("/api/actualites", {}).then((res) => {
+        if (res.data.error === false) {
+          // console.log(res.data.evenements);
 
-        setState({...state, list: res.data.evenements});
-      }
-    })
-  }, [])
-
-
+          setState({ ...state, list: res.data.evenements });
+        }
+      });
+    }
+  }, []);
 
   // const [fade, setFade] = useState(false);
   // console.log(state.list);
@@ -47,12 +47,13 @@ const Carousel = (props) => {
     <div className="carousel-container">
       <AiOutlineLeft className="controler" onClick={prev} />
       <div className="EventContainer">
-
-        {
-
-          state.list.map((event, index) => 
-          
-          <div className={`carousel ${state.index === index ? "fade-in" : "fade-out "}`} key = {index}>
+        {state.list.map((event, index) => (
+          <div
+            className={`carousel ${
+              state.index === index ? "fade-in" : "fade-out "
+            }`}
+            key={index}
+          >
             <div className="carouselImage">
               <div className="img">
                 <img src={event.image} alt="image" />
@@ -65,14 +66,21 @@ const Carousel = (props) => {
                   ? event.description.slice(0, 300) + "..."
                   : event.description}
               </p>
-              <div>
-                <a className='button' href={`/evenements/${event.id_evenement}`} >Lire la suite.</a>
-              </div>
+              {!props.hr ? (
+                <div>
+                  <a
+                    className="button"
+                    href={`/evenements/${event.id_evenement}`}
+                  >
+                    Lire la suite.
+                  </a>
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
-          
-            )
-        }
+        ))}
         {/* <div
           className={`carousel ${state.index === 0 ? "fade-in" : "fade-out "}`}
         >

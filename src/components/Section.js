@@ -10,7 +10,7 @@ function Section(props) {
         <div className="sectionHeaderInputContainer">
           <label htmlFor="sectionHeader">Titre :</label>
           <input
-            name="sectionTitle"
+            name="titre"
             data-sectionNumber={props.index}
             id="sectionHeader"
             type="text"
@@ -28,7 +28,11 @@ function Section(props) {
         </div>
         <div className="sectionImageInputContainer">
           <label htmlFor="articleImage">Image :</label>
-          <input type="file" data-sectionNumber={props.index} />
+          <input
+            name="sectionImage"
+            type="file"
+            data-sectionNumber={props.index}
+          />
         </div>
       </div>
     </Fragment>

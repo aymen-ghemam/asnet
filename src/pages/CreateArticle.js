@@ -12,7 +12,6 @@ function CreateArticle() {
       },
     };
     const sectionsList = [];
-
     for (let i = 1; i <= sections.length; i++) {
       let values = {};
       for (let j = 3; j < e.target.length; j++) {
@@ -20,8 +19,9 @@ function CreateArticle() {
           e.target[j].attributes["data-sectionnumber"] &&
           e.target[j].attributes["data-sectionnumber"].nodeValue == i
         ) {
-          console.log(e.target[j].attributes["name"].nodeValue);
-          values[e.target[j].attributes["name"].nodeValue] = e.target[j].value;
+          // console.log(typeof e.target[j].attributes["name"].nodeValue);
+          values[String(e.target[j].attributes["name"].nodeValue)] =
+            e.target[j].value;
         }
       }
       sectionsList.push(values);
