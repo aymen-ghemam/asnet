@@ -18,18 +18,20 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: rgba(35, 35, 35, 0.548);
   z-index: 1;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .signUpPopUp {
   display: flex;
   flex-direction: row;
-  height: 90%;
+  min-height: 90%;
   width: 70%;
   z-index: 2;
   border-radius: 10px;
@@ -44,10 +46,12 @@
 }
 .signUpInfoContainer {
   padding: 1.5rem;
+  height: 100%;
   width: 55%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: auto;
 }
 .signUpInput {
   margin: 0.5rem 0 0.5rem 0;
@@ -87,6 +91,14 @@
   justify-content: space-between;
   width: 60%;
   margin-bottom: 1.5rem;
+}
+.specialisteContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-bottom: 1.5rem;
+}
+.isSpecialisteContainer {
 }
 
 .nomPrenomContainer {

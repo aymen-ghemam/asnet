@@ -4,16 +4,17 @@ import ImageUpload from "./ImageUpload";
 import "./SignUp.css";
 
 const SignUp = (props) => {
-  const [state, setState] = useState({error: false, msg: ''});
-  const [photo, setPhoto] = useState('');
+  const [state, setState] = useState({ error: false, msg: "" });
+  const [photo, setPhoto] = useState("");
 
   const handleImageUpload = (url) => {
     console.log(url);
     setPhoto(url);
-  } 
+  };
+  const [specialist, setspecialist] = useState(false);
 
   const handleSubmit = (e) => {
-    console.log('rani hna');
+    console.log("rani hna");
     e.preventDefault();
     const email = e.target[0].value;
     const nom = e.target[1].value;
@@ -24,19 +25,33 @@ const SignUp = (props) => {
     const naissance = e.target[6].value;
     // const photo = e.target[7].value;
 
-    if (email !== '' && password !== '' && nom !== '' && prenom !== '' && numero !== '' && photo !== '' ) {
-      axios.post('/api/users', {
-        nom, prenom, email, password, numero, sexe, naissance, photo
-      })
-      .then(res => {
+    if (
+      email !== "" &&
+      password !== "" &&
+      nom !== "" &&
+      prenom !== "" &&
+      numero !== "" &&
+      photo !== ""
+    ) {
+      axios
+        .post("/api/users", {
+          nom,
+          prenom,
+          email,
+          password,
+          numero,
+          sexe,
+          naissance,
+          photo,
+        })
+        .then((res) => {
           if (res.data.error === false) {
             window.location.reload();
             console.log(res.data.error);
-          }
-          else setState({...state, error: true, msg: res.data.msg})
-      });
-    }
-    else setState({...state, error: true, msg: 'Please fill all the fields!'})
+          } else setState({ ...state, error: true, msg: res.data.msg });
+        });
+    } else
+      setState({ ...state, error: true, msg: "Please fill all the fields!" });
   };
 
   return (
@@ -51,10 +66,22 @@ const SignUp = (props) => {
       ></div>
       <div className="signUpPopUp">
         <div className="signUpImageContainer"></div>
-
-        <form className="signUpInfoContainer" onSubmit = {handleSubmit}>
+        <form className="signUpInfoContainer" onSubmit={handleSubmit}>
           <div className="signUpInfoTitle">
             <h3>S'inscrire</h3>
+          </div>
+          <div className="specialisteContainer">
+            {/* <div className="rememberMe"> */}
+            <label className="rememberMeContainer">
+              Vous etes un specialiste ?
+              <input
+                type="checkbox"
+                name="isSpecialiste"
+                value={true}
+                onChange={() => setspecialist((prev) => !prev)}
+              />
+              <span className="checkmark"></span>
+            </label>
           </div>
           <div className="signUpInputContainer">
             <label htmlFor="emailInput">Email :</label>
@@ -65,6 +92,7 @@ const SignUp = (props) => {
               className="signUpInput"
             />
           </div>
+
           <div className="signUpInputContainer nomPrenomContainer">
             <div className="nomInputContainer">
               <label htmlFor="nomInput">Nom :</label>
@@ -124,9 +152,7 @@ const SignUp = (props) => {
           </div>
 
           <div className="signUpInputContainer">
-            <label htmlFor="photoInput">
-              Photo :<span className="photoInputContain">+</span>
-            </label>
+            <label htmlFor="photoInput">Photo de profile:</label>
             {/* <input
               type="file"
               name="photo"
@@ -134,16 +160,31 @@ const SignUp = (props) => {
               className="hidden"
             
             /> */}
-            <ImageUpload onUpload = {handleImageUpload} />
+            <ImageUpload onUpload={handleImageUpload} />
           </div>
-
-          <p className='msg'>{state.error === true? state.msg: ''}</p>
+          <div className="signUpInputContainer">
+            <label htmlFor="photoInput">Photo du carte:</label>
+            {/* <input
+              type="file"
+              name="photo"
+              id="photoInput"
+              className="hidden"
+            
+            /> */}
+            <ImageUpload onUpload={handleImageUpload} />
+          </div>
+          <div className="signUpInputContainer">
+            <label htmlFor="speciliteInput">Spécialite :</label>
+            <input
+              type="text"
+              name="specialite"
+              id="speciliteInput"
+              className="signUpInput"
+            />
+          </div>
+          <p className="msg">{state.error === true ? state.msg : ""}</p>
           <div className="submitSignUpContainer">
-            <button
-              className="connectBtn"
-            >
-              Connecter
-            </button>
+            <button className="connectBtn">S'inscrire</button>
             <div>
               <button
                 className="switchSignBtn"
