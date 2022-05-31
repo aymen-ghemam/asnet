@@ -6,6 +6,7 @@ import Landing from "./pages/Landing";
 import CreateArticle from "./pages/CreateArticle";
 import Footer from "./components/Footer";
 import Salon from "./pages/Salon";
+import About from "./pages/About";
 import ArticlePage from "./pages/ArticlePage";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -73,6 +74,7 @@ function App() {
           <Route exact path="/SignUp" element={<SignUpPage />} />
           <Route exact path="/articles" element={<ArticlePage />} />
           <Route exact path="/createArticle" element={<CreateArticle />} />
+          <Route exact path="/About" element={<About />} />
           <Route
             exact
             path="/articles/:id"

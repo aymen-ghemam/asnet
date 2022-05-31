@@ -24,7 +24,7 @@ const Navbar = (props) => {
           data-visible="false"
         >
           <li>
-            <a href="#">Découvrir ASNET</a>
+            <a href="/about">Découvrir ASNET</a>
           </li>
           <li>
             <a href="/evenements">Nos actualité</a>

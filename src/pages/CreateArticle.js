@@ -32,6 +32,7 @@ function CreateArticle() {
     }
     article.sections = sectionsList;
     console.log(article);
+    
   };
 
   const uploadImage = (url, index) => {
